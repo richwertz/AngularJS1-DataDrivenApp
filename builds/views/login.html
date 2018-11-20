@@ -1,0 +1,35 @@
+<section class="card login">
+	<form name="myform"
+		ng-submit="login()"
+		novalidate>
+
+	<div class="textintro">
+		<h1>Hi there!</h1>
+		<p>Log-in to access the Angular App!</p>
+		<!--
+
+		<p>{{ user }}</p> This doesn't work!
+
+		-->
+		<p class="message" ng-show="message">{{ message }}</p>
+
+	</div>
+
+	<fieldset>
+		<input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+		<p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched">Must be a valid email</p>
+
+	<!--
+	  And the first thing we're going to add is an ngmodel directive. So, remember in Angular directives are just special commands and you can add them as attributes or sometimes as tags. So here we're going to say that when somebody types in to this input field, Angular is going to create for us a variable and we're going to put that inside a user object and this ones going to be called email. So ngmodel is going to create a variable in the current apps scope.
+
+	  Here we're creating this variable called email and that is inside a user object that is going to live in our scope. So we're looking at the login.html view right now. Remember that our controller is going to be everything that lives inside this main tag right here because we've added this ngview directive that controls how our router is going to send the different views and manage them with the different controllers.
+	-->
+
+        <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+        <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched">Password is required</p>
+	</fieldset>
+
+	<button type="submit" class="btn" ng-disabled="myform.$invalid">Login</button>
+	<p>or <a ng-href="#/register">register</a></p>
+	</form>
+</section>

@@ -1,0 +1,10 @@
+<div class="branding"><a ng-href="#/">angularJS</a></div>
+<ul>
+    <li><a ng-hide="currentUser" ng-href="#/login">Login</a></li>
+    <li><a ng-hide="currentUser" ng-href="#/register">Register</a></li>
+
+    <li ng-controller="RegistrationController" class="currentUser"><a ng-show="currentUser" ng-click="logout()"
+                                                                      ng-href="#/login">Logout</a></li>
+    <li><a ng-show="currentUser" ng-href="#/meetings">Meetings
+        <span ng-show="howManyMeetings" class="badge">{{ howManyMeetings }}</span></a></li>
+</ul>
